@@ -47,6 +47,10 @@ def retrieve_rr(movie_name, flag):
                 cast = movie.get('cast')
                 cast = [i.get('name') for i in cast]
                 return_value += "Cast of " + movie.get('long imdb title') + ": " + ', '.join(cast) + "\n\n"
+            elif flag == "review":
+                return_value += "Review of movies is beyond my knowledge domain! I can get you ratings though!\n"
+                flag = "rating"
+                idx -= 1
         except Exception as e:
             print(e)
         if idx == 3:
